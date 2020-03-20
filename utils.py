@@ -1,7 +1,9 @@
 import numpy as np
 import scipy.sparse as sp
 import torch
+import os
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 def encode_onehot(labels):
     classes = set(labels)
@@ -10,7 +12,7 @@ def encode_onehot(labels):
     return labels_onehot
 
 
-def load_data(path="./data/cora/", dataset="cora"):
+def load_data(path=f"{dir_path}/data/cora/", dataset="cora"):
     """Load citation network dataset (cora only for now)"""
     print('Loading {} dataset...'.format(dataset))
 
